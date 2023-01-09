@@ -2,36 +2,26 @@ file_data = open(r"chartIn.txt")
 file_data_list = []
 
 
-def remove(text):
-    return text.replace(" ", "")
+for line in file_data.read().splitlines():  # splits the data into lines
+    file_data_list.append(line.split())     # splits the lines into items
 
 
+def extract_each(number):   # if the question comes up: is there a window seat available?
+    return [item[number] for item in file_data_list]    # returns the value of each row for the given index (aisle)
 
 
-for line in file_data.read().splitlines():
-    #new_lines = file_data_list.append(line)
+window_seats = extract_each(1) + extract_each(6)  # [row A + row F]
+middle_seats = extract_each(2) + extract_each(5)  # [row B + row E]
+aisle_seats = extract_each(3) + extract_each(4)  # [row C + row D]
 
 
-    #no_spaces = list(remove(line))
-    #file_data_list.append(no_spaces)
+def reserved_seats_window():
+    if "X" in window_seats:
+        index_window = window_seats.index("X")
+        return print(index_window)
+    else:
+        print("All seats are still available.\n")
 
-
-print(file_data_list)
-
-
-# Python3 program to extract first and last
-# element of each sublist in a list of lists
-#
-
-def extract_first(file_data_list):
-    return [item[0] for item in file_data_list]
-
-
-#print(extract_first(file_data_list))
-
-
-
-# print(file_data_list[1][2]) # prints the second index of the first item in the list
-
+reserved_seats_window()
 
 file_data.close()
