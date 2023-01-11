@@ -24,7 +24,7 @@ def reserved_seats_window():
     else:
         print("All seats are still available.\n")
 
-
+print("xx")
 #file_data.close()
 
 
