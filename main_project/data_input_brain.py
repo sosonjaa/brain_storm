@@ -5,6 +5,7 @@ file_data_list = []
 for line in file_data.read().splitlines():  # splits the data into lines
     file_data_list.append(line.split())     # splits the lines into items
 
+print(file_data_list)
 
 def extract_each(number):   # if the question comes up: is there a window seat available?
     return [item[number] for item in file_data_list]    # returns the value of each row for the given index (aisle)
@@ -22,4 +23,9 @@ def reserved_seats_window():
     else:
         print("All seats are still available.\n")
 
+
 file_data.close()
+
+
+# soll alle Dateien einlesen können (chartIn 1-4)
+# mit dictionaries?
