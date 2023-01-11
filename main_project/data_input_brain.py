@@ -1,10 +1,17 @@
-file_data = open(r"chartIn.txt")
+#from pathlib import Path
+
+#p = Path(__file__).with_name('file.txt')
+#with p.open('r') as f:
+#    print(f.read())
+
 file_data_list = []
 
+def open_file(filename):
+    file_data = open(filename)
+    for line in file_data.read().splitlines():  # splits the data into lines
+        file_data_list.append(line.split())     # splits the lines into items
 
-for line in file_data.read().splitlines():  # splits the data into lines
-    file_data_list.append(line.split())     # splits the lines into items
-
+open_file(r"chartIn.txt")
 print(file_data_list)
 
 def extract_each(number):   # if the question comes up: is there a window seat available?

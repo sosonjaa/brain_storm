@@ -1,0 +1,11 @@
+	A	B	X	X	E	X
+1	A	B	X	X	E	X
+2	X	X	C	X	X	F
+3	X	B	X	D	X	X
+4	A	X	C	X	X	X
+5	X	B	X	X	E	F
+6	X	B	X	D	X	X
+7	A	X	X	D	E	F
+8	A	X	X	X	X	X
+9	X	B	C	X	X	F
+10	A	X	C	D	X	F
